@@ -21,7 +21,7 @@
                             </el-icon></el-button>
                     </div>
                     <div class="flex">
-                        <el-button size="small" class="mt-2 ml-2 bg-primary" type="primary"
+                        <el-button size="small" class="mt-2 ml-2 bg-red-500" type="danger"
                             @click="cartStore.deleteCartProduct(item)"><el-icon>
                                 <Delete />
                             </el-icon></el-button>
