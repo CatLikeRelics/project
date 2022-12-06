@@ -3,7 +3,7 @@
         <div>
             <ul>
                 <li class="flex ">
-                    <div class="w-24 h-24"><img :src="( linkProducts || initialSrc)"></div>
+                    <div class="w-24 h-24"><img :src="( linkProducts || productLink || initialSrc )"></div>
                     <div>
                         <p class="ml-3 mt-1 text-xs ">{{ productName }}</p>
                         <p class="ml-3 mt-5 text-xs text-red-500">￥{{ price }}</p>
