@@ -22,12 +22,12 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
-  function addCartProduct(product: any) {
+  function addCartProduct(product: Product) {
 
     const productStore = useProductStore()
     const { products } = productStore
     //查看商品有无库存
-    if (product.inventory < 1) {
+    if (product.inventory! < 1) {
       return;
     }
     //查看购物车有无该商品
@@ -46,7 +46,7 @@ export const useCartStore = defineStore('cart', () => {
         quantity: 1
       })
     }
-    if (product.inventory > 1) {
+    if (product.inventory! > 1) {
       ElMessage({
         message: product.name + ' 已添加至购物车',
         type: 'success',

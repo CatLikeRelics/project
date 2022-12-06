@@ -5,7 +5,7 @@ export interface Product {
     url: string;
     name: string;
     price: number;
-    inventory: number;
+    inventory?: number;
 }
 
 export interface CartProduct {
