@@ -12,7 +12,7 @@
                 </li>
             </ul>
         </div>
-        <el-form label-position="top" size="small" class="mt-6 ml-4" model="addProductsForm" ref="addProductsRef">
+        <el-form label-position="top" size="small" class="mt-6 ml-4"  ref="addProductsRef">
             <el-form-item label="商品图片 ">
                 <input type="file" class="text-xs" @change="handleChange">
             </el-form-item>
@@ -26,7 +26,7 @@
             <el-form-item label="商品库存" prop="inventory">
                 <el-input-number v-model="inventory" :step="1" :min="1" />
             </el-form-item>
-            <el-form-item label="图片链接" prop="link">
+            <el-form-item label="图片链接" prop="productLink">
                 <el-input v-model="productLink" :disabled="Link" clearable></el-input>
             </el-form-item>
             <el-form-item>
@@ -96,7 +96,7 @@ const addProduct = () => {
         productStore.addProducts(addProducts)
         resetForm()
         ElMessage({
-            message: '商品 ' + productName.value + ' 添加成功',
+            message: '商品 ' + addProducts.name + ' 添加成功',
             type: 'success',
         })
     } else {
