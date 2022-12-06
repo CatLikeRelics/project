@@ -22,7 +22,7 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
-  function addCartProduct(product: Product) {
+  function addCartProduct(product: any) {
 
     const productStore = useProductStore()
     const { products } = productStore
