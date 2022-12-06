@@ -66,7 +66,7 @@ export const useProductStore = defineStore('product', () => {
     if (productsItem) {
       const productItem = products.find((item: { id: number; }) => item.id === product.id);
       if (productItem?.inventory != 0) {
-        productsItem.inventory++
+        productsItem.inventory! ++
         persistenceProduct()
       }
     } else {
@@ -87,7 +87,7 @@ export const useProductStore = defineStore('product', () => {
     const ret = products.find(item => item.id === product.id)
     if (ret) {
       if (ret.inventory != 0) {
-        ret.inventory--
+        ret.inventory! --
         const cartStore = useCartStore()
         cartStore.persistenceCart()
         persistenceProduct()
@@ -98,7 +98,7 @@ export const useProductStore = defineStore('product', () => {
   function addProductInventory(product: CartProduct) {
     const ret = products.find(item => item.id === product.id)
     if (ret) {
-      ret.inventory++;
+      ret.inventory! ++;
     }
     const cartStore = useCartStore()
     cartStore.decrementCartProduct(product)
@@ -109,7 +109,7 @@ export const useProductStore = defineStore('product', () => {
   function resetProductInventory(product: CartProduct) {
     const ret = products.find(item => item.id === product.id)
     if (ret) {
-      ret.inventory += product.quantity
+      ret.inventory! += product.quantity
     }
   }
 
